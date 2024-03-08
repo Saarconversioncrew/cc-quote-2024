@@ -1,7 +1,7 @@
 <!--
   templateType: quote
   isAvailableForNewContent: true
-  label: Modern
+  label: Conversion Crew quote template
   screenshotPath: ../images/modern.png
 -->
 
@@ -9,8 +9,12 @@
 
 {% block stylesheet %}
   {{ require_css(get_asset_url("../css/modern.css")) }}
+  {{ require_css(get_asset_url("../css/cc-quote-2024.css")) }}
 {% endblock stylesheet %}
 
+{% block settings %}
+  {% module "banner_img" path="@hubspot/image" label='Select a background image', src='https://www.conversioncrew.com/hubfs/Website/Website%202023/Cc-pim.jpg', export_to_template_context=True %}
+{% endblock settings %}
 {% block body %}
 
 {% require_css %}
@@ -69,45 +73,47 @@
   </style>
 {% end_require_css %}
 
-<body class="hs-quotes hs-quotes--modern">
-  <div class="header">
-    <div class="container">
-      {% module "logo" path="../modules/quote_logo" %}
-    </div>
-  </div>
-
-  <div class="colored-section banner banner--top">
-    <div class="container">
-      {% module "quote_name"
-        label="Quote name"
-        path="@hubspot/rich_text"
-        html="<h1>{{ personalization_token('template_data.quote.hs_title', '') }}</h1>"
-      %}
-
-      <div class="quote-info_wrapper">
-        <div class="recipient-info">
-          {% module "buyer_company" path="../modules/buyer_company" %}
-          {% module "buyer_contacts" path="../modules/buyer_contacts" %}
-        </div>
-        <div class="quote-info">
-          {% module "reference" path="../modules/reference" %}
-          {% module "quote_created" path="../modules/quote_created" %}
-          {% module "quote_expires" path="../modules/quote_expires" %}
-          {% module "sender_user"
-            label="Created by"
-            path="@hubspot/rich_text",
-            html={{
-              template_translations.quote_created_by.message ~ " " ~ ptoken_sender_full_name ~ "<br>" ~
-              ptoken_sender_title ~ "<br>" ~
-              ptoken_sender_email ~ "<br>" ~
-              ptoken_sender_phone
-            }}
-          %}
-        </div>
+<body class="hs-quotes cc-quote hs-quotes--modern">
+  <div class="banner--background banner" style="background:url({{widget_data.banner_img.src}});">
+    <div class="header">
+      <div class="container">
+        {% module "logo" path="../modules/quote_logo" %}
       </div>
     </div>
-  </div>
 
+    <div class="colored-section  banner--top">
+      <div class="container">
+        {% module "quote_name"
+          label="Quote name"
+          path="@hubspot/rich_text"
+          html="<h1>{{ personalization_token('template_data.quote.hs_title', '') }}</h1>"
+        %}
+
+        <div class="quote-info_wrapper">
+          <div class="recipient-info">
+            {% module "buyer_company" path="../modules/buyer_company" %}
+            {% module "buyer_contacts" path="../modules/buyer_contacts" %}
+          </div>
+          <div class="quote-info">
+            {% module "reference" path="../modules/reference" %}
+            {% module "quote_created" path="../modules/quote_created" %}
+            {% module "quote_expires" path="../modules/quote_expires" %}
+            {% module "sender_user"
+              label="Created by"
+              path="@hubspot/rich_text",
+              html={{
+                template_translations.quote_created_by.message ~ " " ~ ptoken_sender_full_name ~ "<br>" ~
+                ptoken_sender_title ~ "<br>" ~
+                ptoken_sender_email ~ "<br>" ~
+                ptoken_sender_phone
+              }}
+            %}
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+  
   <div class="container comments">
     <div class="comments-text_wrapper">
       {% module "comments"

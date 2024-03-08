@@ -32,6 +32,8 @@
 {% set ptoken_sender_email = "{{ personalization_token('template_data.quote.hs_sender_email', '') }}" %}
 {% set ptoken_sender_phone = "{{ personalization_token('template_data.quote.hs_sender_phone', '') }}" %}
 
+{% block settings %}
+{% endblock settings %}
 <html lang="{{ html_lang }}" {{ html_lang_dir }}>
   <head>
     <title>{{ QUOTE.hs_title }}</title>
