@@ -1,0 +1,13 @@
+{
+  "label" : "cc-quote-2024",
+  "preview_path" : "./templates/modern.html",
+  "screenshot_path" : null,
+  "enable_domain_stylesheets" : false,
+  "is_available_for_new_content" : true,
+  "extends" : "@hubspot/cms-quotes-theme",
+  "author" : {
+    "name" : "",
+    "email" : ""
+  },
+  "hide_all_default_modules" : false
+}
