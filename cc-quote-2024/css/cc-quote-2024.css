@@ -1,1 +1,67 @@
-.cc-quote
+.cc-quote .banner-overlay{
+    background: #031040;
+    opacity:0.7;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+.cc-quote .banner--background{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+.cc-quote  .banner {
+    position:relative;
+    background-color: transparent;
+}
+.cc-quote .card {
+    background: #fff;
+    color: #031040;
+    border-radius: 12px;
+    box-shadow: 0 32px 64px rgba(3,16,64,.05), 0 16px 32px rgba(3,16,64,.05);
+    margin-bottom: -100px;
+    padding: 37px 36px;
+    position: relative;
+}
+
+.cc-quote .expandable {
+    position: relative;
+}
+.cc-quote .col-6{
+    width:50%
+}
+.cc-quote .container-banner{
+    display:flex;
+}
+.cc-quote .right{
+    width:100%
+}
+.cc-quote .label{
+    font-weight: 600;
+}
+.cc-quote .expandable::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: url({{ get_asset_url('/cc-quote-2024/icons/arrow-down.svg') }});
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 24px;
+    height: 10px;
+    right: 17px;
+    top: 15px;
+    cursor: pointer;
+}
+.cc-quote .group{
+    border-bottom: 1px solid #e3e6ec;
+    padding-bottom: 1rem;
+}
+.cc-quote .expandable .output{
+    display:none;
+}
+.cc-quote .expandable.open .output{
+    display:block;
+}
+

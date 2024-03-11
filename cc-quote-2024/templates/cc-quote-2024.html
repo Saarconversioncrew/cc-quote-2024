@@ -14,6 +14,14 @@
 
 {% block settings %}
   {% module "banner_img" path="@hubspot/image" label='Select a background image', src='https://www.conversioncrew.com/hubfs/Website/Website%202023/Cc-pim.jpg', export_to_template_context=True %}
+  {% module "sign" path="@hubspot/text", label="Sign", value="Sign", export_to_template_context=True %} 
+  {% module "date" path="@hubspot/text", label="Date", value="Date", export_to_template_context=True %} 
+  {% module "company" path="@hubspot/text", label="Company", value="Company", export_to_template_context=True %} 
+  {% module "for" path="@hubspot/text", label="For", value="For", export_to_template_context=True %} 
+  {% module "enddate" path="@hubspot/text", label="End date", value="End date", export_to_template_context=True %} 
+  {% module "reference_title" path="@hubspot/text", label="Reference", value="Reference", export_to_template_context=True %} 
+  {% module "comments_title" path="@hubspot/text", label="Comments", value="Comments", export_to_template_context=True %} 
+  {% module "terms_title" path="@hubspot/text", label="Purchase terms", value="Purchase terms", export_to_template_context=True %} 
 {% endblock settings %}
 {% block body %}
 
@@ -74,41 +82,62 @@
 {% end_require_css %}
 
 <body class="hs-quotes cc-quote hs-quotes--modern">
-  <div class="banner--background banner" style="background:url({{widget_data.banner_img.src}});">
+  <div class="banner">
+  <div class="banner--background" style="background:url({{widget_data.banner_img.src}});"></div>
+  <div class="banner-overlay"></div>
     <div class="header">
       <div class="container">
-        {% module "logo" path="../modules/quote_logo" %}
+        {% module "logo" path="../modules/quote_logo" 
+          img={
+          'override_inherited_src': true,
+          'src': 'https://26578247.fs1.hubspotusercontent-eu1.net/hubfs/26578247/Website%202024/cc-talent-logo-with-tagline-black-gradient-dot.svg',
+          'alt': 'CC talent logo',
+          'width': 52,
+          'height': 48
+        }, %}
       </div>
     </div>
-
     <div class="colored-section  banner--top">
-      <div class="container">
-        {% module "quote_name"
-          label="Quote name"
-          path="@hubspot/rich_text"
-          html="<h1>{{ personalization_token('template_data.quote.hs_title', '') }}</h1>"
-        %}
-
-        <div class="quote-info_wrapper">
-          <div class="recipient-info">
-            {% module "buyer_company" path="../modules/buyer_company" %}
-            {% module "buyer_contacts" path="../modules/buyer_contacts" %}
-          </div>
-          <div class="quote-info">
-            {% module "reference" path="../modules/reference" %}
-            {% module "quote_created" path="../modules/quote_created" %}
-            {% module "quote_expires" path="../modules/quote_expires" %}
-            {% module "sender_user"
-              label="Created by"
-              path="@hubspot/rich_text",
-              html={{
-                template_translations.quote_created_by.message ~ " " ~ ptoken_sender_full_name ~ "<br>" ~
-                ptoken_sender_title ~ "<br>" ~
-                ptoken_sender_email ~ "<br>" ~
-                ptoken_sender_phone
-              }}
-            %}
-          </div>
+      <div class="container container-banner" >
+        <div class="col col-6">
+          {% module "Quote name"
+              label="Quote name"
+              path="@hubspot/rich_text"
+              html="<p class=\"subtitle\">{{ personalization_token('template_data.quote.associated_objects.company.name', '') }}</p><h1>{{ personalization_token('template_data.quote.hs_title', '') }}</h1>"
+          %}
+        </div>
+        <div class="quote-info_wrapper col col-6">
+          <div class="right">
+            <div class="card">
+                <div class="group">
+                    <p class="label">{{widget_data.date.value}}</p>
+                    <div class="output">{% module "quote_created" path="../modules/quote_created" %}</div>
+                </div>
+                <div class="group expandable">
+                    <p class="label">{{widget_data.company.value}}</p>
+                    <div class="output">{% module "buyer_company" path="../modules/buyer_company" %}</div>
+                </div>
+                <div class="group expandable">
+                    <p class="label">{{widget_data.for.value}}</p>
+                    <div class="output">{% module "buyer_contacts" path="../modules/buyer_contacts" %}</div>
+                </div>
+                <div class="group">
+                    <p class="label">{{widget_data.enddate.value}}</p>
+                    <div class="output">{% module "quote_created" path="../modules/quote_expires" %}</div>
+                </div>
+                <div class="group">
+                    <p class="label">{{widget_data.reference_title.value}}</p>
+                    <div class="output">
+                        {% module "reference"
+                            label="Reference"
+                            path="@hubspot/rich_text"
+                            html="{{ personalization_token('template_data.quote.hs_quote_number', '') }}"
+                        %}
+                    </div>
+                </div>
+              
+            </div>
+          </div>  
         </div>
       </div>
     </div> 
@@ -200,6 +229,14 @@
       {% module "print" path="../modules/print" %}
     </div>
   </div>
+  <script>
+    var expandableGroups = document.querySelectorAll('.expandable');
 
+    expandableGroups.forEach(function(group) {
+        group.addEventListener('click', function() {
+            group.classList.toggle('open');
+        });
+    });
+</script>
 </body>
 {% endblock body %}
