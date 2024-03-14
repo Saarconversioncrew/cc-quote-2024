@@ -87,28 +87,41 @@
   <div class="banner-overlay"></div>
     <div class="header">
       <div class="container">
-        {% module "logo" path="../modules/quote_logo" 
-          img={
-          'override_inherited_src': true,
-          'src': 'https://26578247.fs1.hubspotusercontent-eu1.net/hubfs/26578247/Website%202024/cc-talent-logo-with-tagline-black-gradient-dot.svg',
-          'alt': 'CC talent logo',
-          'width': 52,
-          'height': 48
-        }, %}
+        {% module "logo" path="../modules/quote_logo", override_default_logo='true',
+        company_logo_image={
+          'src': 'https://www.conversioncrew.com/hs-fs/hubfs/Huisstijl/Logo/CC_Logo_RGB_Diap.png?width=400&height=120&name=CC_Logo_RGB_Diap.png',
+          'alt': 'Conversion Crew logo',
+          'width': 280,
+          'height': 80
+        }
+        %}
       </div>
     </div>
     <div class="colored-section  banner--top">
-      <div class="container container-banner" >
-        <div class="col col-6">
+      <div class="container container-banner container-flex" >
+        <div class="col col-6  col-md-12">
           {% module "Quote name"
               label="Quote name"
               path="@hubspot/rich_text"
               html="<p class=\"subtitle\">{{ personalization_token('template_data.quote.associated_objects.company.name', '') }}</p><h1>{{ personalization_token('template_data.quote.hs_title', '') }}</h1>"
           %}
+        {% module "sender_contact_top_banner"  
+            label="Sender contact top banner", 
+            path="../modules/cc-sender_contact", 
+            heading_text="",
+            contact_info_on="false",
+            company_sender_on="true" %}
         </div>
-        <div class="quote-info_wrapper col col-6">
+        <div class="quote-info_wrapper col col-6 col-md-12"> 
           <div class="right">
             <div class="card">
+              <div class="card-heading">
+                  {% module "Heading information card"
+                      label="Heading information card"
+                      path="@hubspot/rich_text"
+                      html="<h2>Information</h2>"
+                  %}
+                </div>
                 <div class="group">
                     <p class="label">{{widget_data.date.value}}</p>
                     <div class="output">{% module "quote_created" path="../modules/quote_created" %}</div>

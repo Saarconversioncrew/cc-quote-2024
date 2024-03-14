@@ -1,0 +1,14 @@
+ .cc-sender{
+    border-radius: 6px;
+    width: fit-content;
+    padding: 0.5rem;
+    align-items: center;
+}
+.cc-sender .image{
+    display: flex;
+    align-items: center;
+}
+ .cc-sender .info{
+      margin-left: 1rem;
+      margin-right: 1rem;
+}

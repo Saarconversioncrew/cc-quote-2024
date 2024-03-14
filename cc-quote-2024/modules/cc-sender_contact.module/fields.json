@@ -1,0 +1,133 @@
+[ {
+  "id" : "heading_text",
+  "name" : "heading_text",
+  "display_width" : null,
+  "label" : "Heading content",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Questions? Contact me"
+}, {
+  "id" : "heading_tag",
+  "name" : "heading_tag",
+  "display_width" : null,
+  "label" : "Heading level",
+  "help_text" : "Choose a heading level. H1 is the largest, followed by H2, and so on",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ], [ "h5", "H5" ], [ "h6", "H6" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "h2"
+}, {
+  "id" : "include_hubspot_avatar",
+  "name" : "include_hubspot_avatar",
+  "display_width" : null,
+  "label" : "Include sender's HubSpot avatar",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "070a43cd-6c84-832e-2897-6772611d1826",
+  "name" : "contact_info_on",
+  "display_width" : null,
+  "label" : "Contact info on",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "contact_information",
+  "name" : "contact_information",
+  "display_width" : null,
+  "label" : "Contact information",
+  "required" : true,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "contact_info_on",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "richtext",
+  "default" : "<div>{{ personalization_token('template_data.quote.hs_sender_jobtitle', '') }}</div>\n<div>{{ personalization_token('template_data.quote.hs_sender_email', '') }}</div>\n<div>{{ personalization_token('template_data.quote.hs_sender_phone', '') }}</div>"
+}, {
+  "id" : "748e24cc-18e3-577c-27f5-7a2a1969bde2",
+  "name" : "company_sender_on",
+  "display_width" : null,
+  "label" : "Company sender on",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "7a1f2e57-b9a0-31f3-ed53-23317a3f73ec",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "7ac020e0-196c-3223-0e5c-579b1cbd8846",
+    "name" : "background_color",
+    "display_width" : null,
+    "label" : "background color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "default" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "3a2db24d-4266-e19f-4e84-62f6d31c7208",
+    "name" : "text_color",
+    "display_width" : null,
+    "label" : "Text color",
+    "required" : false,
+    "locked" : false,
+    "show_opacity" : false,
+    "type" : "color",
+    "default" : {
+      "color" : "#031040",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "e3997323-dce9-e98e-0ecf-c422b5a98ee0",
+    "name" : "width_avatar",
+    "display_width" : null,
+    "label" : "Width avatar",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : 50
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "background_color" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#031040",
+      "opacity" : 100
+    },
+    "width_avatar" : 50
+  }
+} ]

@@ -15,7 +15,9 @@
 .cc-quote  .banner {
     position:relative;
     background-color: transparent;
+    margin-bottom: 7.5rem;
 }
+
 .cc-quote .card {
     background: #fff;
     color: #031040;
@@ -25,15 +27,41 @@
     padding: 37px 36px;
     position: relative;
 }
-
+.cc-quote  h2,
+.hs-quotes--modern .line-items h2 {
+    font-size:25px;
+    position:relative;
+    margin-bottom:2.5rem;
+}
+.cc-quote h2:after{
+    content:"";
+    background: #0b42ff;
+    border-radius: 3px;
+    display: inline-block;
+    height: 4px;
+    max-width: 100%;
+    vertical-align: top;
+    width: 70px;
+    position:absolute;
+    bottom: -1.5rem;
+    left: 0;
+}
+.cc-quote .card-heading h2{
+    color: #031040;
+    margin-top:0;
+}
 .cc-quote .expandable {
     position: relative;
 }
 .cc-quote .col-6{
     width:50%
 }
-.cc-quote .container-banner{
+.cc-quote .container-flex{
     display:flex;
+    flex-wrap: wrap;
+}
+.cc-quote .container{
+    max-width: 1000px;
 }
 .cc-quote .right{
     width:100%
@@ -63,5 +91,66 @@
 }
 .cc-quote .expandable.open .output{
     display:block;
+}
+
+.cc-quote .header {
+    padding-top: 1rem;
+}
+.cc-quote .comments-text_wrapper > div {
+    border:none;
+    padding:0;
+}
+.cc-quote .line-items__table #line-items__table-body {
+    border-top: none;
+    border-bottom: none;
+}
+.cc-quote .line-items__table-header--main{
+    background: #031040;
+    color:#fff;
+    border-radius:6px;
+}
+.cc-quote .line-items__table tr > th:first-child, 
+.cc-quote .line-items__table tr > td:first-child, 
+.cc-quote .line-items__table tr > th:last-child,
+.cc-quote .line-items__table tr > td:last-child {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.cc-quote .line-items__table .line-items__table-header--main th{
+    border-color: #031040;
+}
+.line-items__table td:first-child{
+    border-width: 0px 0px 0px;
+}
+.cc-quote .line-items__table tr > th:first-child, 
+.cc-quote .line-items__table tr > td:first-child{
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+.cc-quote .line-items__table tr > th:last-child,
+.cc-quote .line-items__table tr > td:last-child{
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.cc-quote .line-items__table .currency__content--full-width{
+    width: fit-content;
+    margin-left:auto;
+    padding: 0 0.2rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: #0B42FF;
+    opacity:1;
+}
+.cc-quote td:last-child .currency__container{
+    flex-direction: column;
+}
+@media (max-width: 991.98px) { 
+
+.cc-quote .col-md-12{
+        width:100%;
+    }
+.cc-quote .col{
+    padding: 15px 0;
+    }
 }
 
