@@ -79,6 +79,26 @@
     "description" : null,
     "placeholders" : null
   },
+  "field_group.default.sender_avatar.alt" : {
+    "message" : "Profielfoto Ron - vierkant",
+    "description" : null,
+    "placeholders" : null
+  },
+  "field_group.default.sender_avatar.loading" : {
+    "message" : "lazy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "field_group.default.sender_avatar.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "field_group.default.sender_avatar.src" : {
+    "message" : "https://www.conversioncrew.com/hubfs/Profielfoto%20Ron%20-%20vierkant.png",
+    "description" : null,
+    "placeholders" : null
+  },
   "heading_tag.choices.h1" : {
     "message" : "H1",
     "description" : "",
@@ -129,14 +149,159 @@
     "description" : "",
     "placeholders" : null
   },
+  "include_hubspot_avatar.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "include_hubspot_avatar.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "include_hubspot_avatar.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "include_hubspot_avatar.label" : {
-    "message" : "Include sender's HubSpot avatar",
+    "message" : "",
     "description" : "",
+    "placeholders" : null
+  },
+  "include_hubspot_avatar.placeholder" : {
+    "message" : "",
+    "description" : null,
     "placeholders" : null
   },
   "name" : {
     "message" : "cc-sender_contact",
     "description" : "",
+    "placeholders" : null
+  },
+  "sender_avatar.default.loading" : {
+    "message" : "lazy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "sender_avatar.default.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "sender_avatar.default.src" : {
+    "message" : "https://www.conversioncrew.com/hubfs/Profielfoto%20Ron%20-%20vierkant.png",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.cc_name.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.cc_name.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.cc_name.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.cc_name.label" : {
+    "message" : "Sure Name",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.cc_name.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.cc_name.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.default.cc_name" : {
+    "message" : "Ron Dukker",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.default.sender_avatar.alt" : {
+    "message" : "Profielfoto Ron - vierkant",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.default.sender_avatar.loading" : {
+    "message" : "lazy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.default.sender_avatar.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.default.sender_avatar.src" : {
+    "message" : "https://www.conversioncrew.com/hubfs/Profielfoto%20Ron%20-%20vierkant.png",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.name" : {
+    "message" : "cc-sender_contact",
+    "description" : "",
+    "placeholders" : null
+  },
+  "senders.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.sender_avatar.default.alt" : {
+    "message" : "Profielfoto Ron - vierkant",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.sender_avatar.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.sender_avatar.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.sender_avatar.label" : {
+    "message" : "Sender avatar",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.sender_avatar.placeholder" : {
+    "message" : "",
+    "description" : null,
     "placeholders" : null
   },
   "style.background_color.default" : {
@@ -165,6 +330,61 @@
     "placeholders" : null
   },
   "style.background_color.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.default.color" : {
+    "message" : "#FFFFFF",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_on.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_on.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_on.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_on.label" : {
+    "message" : "Boolean",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_on.placeholder" : {
     "message" : "",
     "description" : null,
     "placeholders" : null

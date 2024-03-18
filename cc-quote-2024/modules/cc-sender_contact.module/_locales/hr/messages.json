@@ -119,6 +119,91 @@
     "description" : null,
     "placeholders" : null
   },
+  "senders.cc_name.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.cc_name.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.cc_name.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.cc_name.label" : {
+    "message" : "Text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.cc_name.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.cc_name.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.label" : {
+    "message" : "Field group",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.name" : {
+    "message" : "cc-sender_contact",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.sender_avatar.default.alt" : {
+    "message" : "Profielfoto Ron - vierkant",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.sender_avatar.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.sender_avatar.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.sender_avatar.label" : {
+    "message" : "Sender avatar",
+    "description" : null,
+    "placeholders" : null
+  },
+  "senders.sender_avatar.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "style.background_color.default" : {
     "message" : "",
     "description" : null,
@@ -140,6 +225,56 @@
     "placeholders" : null
   },
   "style.background_color.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.label" : {
+    "message" : "Color",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_on.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_on.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_on.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_on.label" : {
+    "message" : "Boolean",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_on.placeholder" : {
     "message" : "",
     "description" : null,
     "placeholders" : null

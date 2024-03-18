@@ -25,7 +25,7 @@
     color: #031040;
     border-radius: 12px;
     box-shadow: 0 32px 64px rgba(3,16,64,.05), 0 16px 32px rgba(3,16,64,.05);
-    margin-bottom: -100px;
+    margin-bottom: -10rem;
     padding: 37px 36px;
     position: relative;
 }
@@ -66,6 +66,7 @@
 }
 .cc-quote .container{
     max-width: 1000px;
+    margin: 3rem auto;
 }
 .cc-quote .right{
     width:100%
@@ -96,10 +97,10 @@
 .cc-quote .expandable.open .output{
     display:block;
 }
-
-.cc-quote .header {
-    padding-top: 1rem;
+.cc-quote .expandable.open .preview{
+    display:none;
 }
+
 .cc-quote .comments-text_wrapper > div {
     border:none;
     padding:0;
@@ -235,7 +236,7 @@
     text-align: left;
     padding: 10px 24px;
     padding-left: 60px;
-    font-weight: 600;
+    font-weight: 600!important;
     min-width: auto;
 }
 .cc-quote .print-button {
@@ -271,6 +272,8 @@
 .cc-quote .footer > .container{
     display: flex;
     padding: 5rem 0 3rem 0;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .cc-quote .footer svg{
     font-size: 1.82rem;
@@ -282,8 +285,15 @@
 .cc-quote .footer .inline-items a{
     text-decoration:none;
 }
-.cc-quote h3{
+.cc-quote .footer h3,
+.cc-quote .footer h2{
     color:#fff;
+    font-size: 1.17em !important;
+    margin-top: auto;
+    margin-bottom: 1rem !important;
+}
+.cc-quote .footer h2:after{
+    content:none;
 }
 .cc-quote .footer .properties a{
     display: inline-flex;
@@ -293,13 +303,45 @@
 .cc-quote .footer .properties svg{
     width: 0.91rem;
 }
+.cc-quote  .header .container{
+    margin:1rem;
+}
+.cc-quote  .header{
+    justify-content: center;
+}
+.cc-quote .discount-notice {
+    color:#fff!important;
+    opacity: 1;
+}
+@media (max-width: 1199.98px) { 
+    .cc-quote .banner--background {
+        background-size: auto;
+        }
+ }
 @media (max-width: 991.98px) { 
 
+.cc-quote .banner {
+        margin-bottom: 12rem;
+    }
+.cc-quote .card{
+    margin-bottom: -14rem;
+}
 .cc-quote .col-md-12{
         width:100%;
     }
 .cc-quote .col{
     padding: 15px 0;
     }
+ .cc-quote .footer > .container,
+ .cc-quote .options_wrapper,
+ .option_wrapper {
+    display:block!important;
+    }
+ .cc-quote .btn-white.sign {
+    margin: 1rem 0;
+}
+.cc-quote .hs-download__button {
+    font-size:14px;
+}
 }
 

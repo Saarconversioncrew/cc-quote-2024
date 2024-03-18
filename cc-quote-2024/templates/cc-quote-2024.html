@@ -107,11 +107,23 @@
               html="<p class=\"subtitle\">{{ personalization_token('template_data.quote.associated_objects.company.name', '') }}</p><h1>{{ personalization_token('template_data.quote.hs_title', '') }}</h1>"
           %}
         {% module "sender_contact_top_banner"  
-            label="Sender contact top banner", 
-            path="../modules/cc-sender_contact", 
-            heading_text="",
-            contact_info_on="false",
-            company_sender_on="true" %}
+              label="Sender contact top banner", 
+              path="../modules/cc-sender_contact", 
+              heading_text="",
+              contact_info_on="false",
+              company_sender_on="true",
+              style={
+              "background_color": {
+                "color": "#FFFFFF",
+                "opacity": 100
+                },
+              "text_color": {
+                    "color": "#031040",
+                    "opacity": 100
+                  },
+              "width_avatar": 50
+            } 
+            %}
         </div>
         <div class="quote-info_wrapper col col-6 col-md-12"> 
           <div class="right">
@@ -129,10 +141,17 @@
                 </div>
                 <div class="group expandable">
                     <p class="label">{{widget_data.company.value}}</p>
+                    <div class="preview">{{QUOTE.associated_objects.company.name}}</div>
                     <div class="output">{% module "buyer_company" path="../modules/buyer_company" %}</div>
                 </div>
                 <div class="group expandable">
                     <p class="label">{{widget_data.for.value}}</p>
+                    {% set BUYER_CONTACTS = QUOTE.associated_objects.contacts%}
+                      {% for recipient in BUYER_CONTACTS %}
+                        {% if loop.first %}
+                          <div class="preview"> {{recipient.firstname}} {{recipient.lastname}}</div>
+                        {% endif%}
+                      {% endfor %}
                     <div class="output">{% module "buyer_contacts" path="../modules/buyer_contacts" %}</div>
                 </div>
                 <div class="group">
@@ -231,7 +250,7 @@
   </div>
   <div class="footer">
   <div class="container">
-    <div class="col col-4">
+    <div class="col col-md-12 col-4">
     {% module "slogan"
         label="Footer text"
         path="@hubspot/rich_text"
@@ -265,7 +284,7 @@
           %}
       </div>
     </div>
-    <div class="col col-4">
+    <div class="col col-md-12 col-4">
     <div class="properties properties--dark ">
     {% module "footer contact text"
     label="Footer contact text"
@@ -288,11 +307,25 @@
     %} 
     </div>
     </div>
-    <div class="col col-4">
-      <div class="container contacts">
-        {% module "sender_contact" path="../modules/sender_contact" %}
-        <br>
-       
+    <div class="col col-md-12 col-4">
+      <div class=" contacts">
+        {% module "bottom_sender_contact" label="Bottom sender company" path="../modules/cc-sender_contact", ,
+          heading_text="Stel je vraag", 
+          contact_info_on="true",
+          company_sender_on="false",
+          style={
+            "background_color": {
+              "color": "#FFFFFF",
+              "opacity": 0
+           },
+           "text_color": {
+              "color": "#fff",
+              "opacity": 100
+            },
+            "border_on": true
+          }
+          %}
+          
       </div>
     </div>
   </div>
@@ -306,7 +339,6 @@
 
   <script>
     var expandableGroups = document.querySelectorAll('.expandable');
-
     expandableGroups.forEach(function(group) {
         group.addEventListener('click', function() {
             group.classList.toggle('open');
