@@ -322,6 +322,16 @@
     color:#fff!important;
     opacity: 1;
 }
+.cc-quote .right-header{
+    display:flex;
+    align-items: center;
+}
+.cc-quote .right-header img{
+    margin: 1rem;
+}
+.cc-quote .right-header button{
+    height: fit-content;
+}
 @media (max-width: 1199.98px) { 
     .cc-quote .banner--background {
         background-size: auto;
