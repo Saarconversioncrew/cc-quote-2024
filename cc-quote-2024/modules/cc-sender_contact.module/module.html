@@ -1,14 +1,15 @@
 {# Contact section with information about the sender, including optional HubSpot avatar #}
+{% set module_id = name|replace("module_", "")|replace("widget_", "") %}
 {% from '../../imports/mock_data.html' import SAMPLE_TEMPLATE_DATA as mock_data %}
 {% set QUOTE = template_data.quote || mock_data.quote %}
 {% set HUBSPOT_BASE_URL = template_data.hubspot_base_url || mock_data.hubspot_base_url %}
-{% set IMAGE_ID = "sender-user-avatar" %}
-<div class="cc-sender-module"{% if module.style.border_on %} style=" border:rgba({{module.style.border_color.color|convert_rgb }}, {{ module.style.border_color.opacity }}%) solid 2px; border-radius: 12px; padding: 1rem;" {% endif %}>
+{% set IMAGE_ID = "sender-user-avatar" ~ "_" ~ module_id %}
+
+<div class="{{module_id}} cc-sender-module"{% if module.style.border_on %} style=" border:rgba({{module.style.border_color.color|convert_rgb }}, {{ module.style.border_color.opacity }}%) solid 2px; border-radius: 12px; padding: 1rem;" {% endif %}>
 {% if module.heading_text %}
   <{{ module.heading_tag }}>{{ module.heading_text }}</{{ module.heading_tag }}> 
 {% endif %}
 <div class="cc-sender" style=" background-color:rgba({{ module.style.background_color.color|convert_rgb }}, {{ module.style.background_color.opacity }}%) ;     color:{{ module.style.text_color.color }};">
-
   <div class="image">
 {% set match_found = false %}
 {% for item in module.senders %}
@@ -24,7 +25,7 @@
             {% set loadingAttr = item.sender_avatar.loading != 'disabled' ? 'loading="{{ item.sender_avatar.loading|escape_attr }}"' : '' %}
             <img src="{{ item.sender_avatar.src|escape_url }}" alt="{{ item.sender_avatar.alt|escape_attr }}" {{ loadingAttr }} width="{{ module.style.width_avatar }}">
             <style>
-              img.false{
+             .{{module_id}} img.false{
                 display:none;
               }
             </style>
@@ -37,7 +38,7 @@
         <img class="{{match_found}}"
             src="https://static.hsappstatic.net/salesImages/static-1.362/avatars/default-avatar.png"
             alt="Sender avatar"
-            id="{{ IMAGE_ID }}"
+            id="{{ IMAGE_ID }}_{{module_id}}"
         />
     </div>
 {% endif %}
@@ -48,7 +49,7 @@
             "include_hubspot_avatar": {{ module.include_hubspot_avatar }},
             "hubspot_user_email": "{{ QUOTE.hs_sender_email }}",
             "hubspot_base_url": "{{ HUBSPOT_BASE_URL }}",
-            "image_id": "{{ IMAGE_ID }}"
+            "image_id": "{{ IMAGE_ID }}_{{module_id}}"
         }
     </script>
     {% end_require_js %}

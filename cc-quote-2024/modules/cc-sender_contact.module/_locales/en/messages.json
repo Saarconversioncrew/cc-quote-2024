@@ -380,7 +380,7 @@
     "placeholders" : null
   },
   "style.border_on.label" : {
-    "message" : "Boolean",
+    "message" : "",
     "description" : null,
     "placeholders" : null
   },
