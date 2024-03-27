@@ -141,21 +141,25 @@
                     <p class="label">{{widget_data.date.value}}</p>
                     <div class="output">{% module "quote_created" path="../modules/quote_created" %}</div>
                 </div>
+                {% if QUOTE.associated_objects.company.name  %}
                 <div class="group expandable">
                     <p class="label">{{widget_data.company.value}}</p>
                     <div class="preview">{{QUOTE.associated_objects.company.name}}</div>
                     <div class="output">{% module "buyer_company" path="../modules/buyer_company" %}</div>
                 </div>
-                <div class="group expandable">
-                    <p class="label">{{widget_data.for.value}}</p>
-                    {% set BUYER_CONTACTS = QUOTE.associated_objects.contacts%}
-                      {% for recipient in BUYER_CONTACTS %}
-                        {% if loop.first %}
-                          <div class="preview"> {{recipient.firstname}} {{recipient.lastname}}</div>
-                        {% endif%}
-                      {% endfor %}
-                    <div class="output">{% module "buyer_contacts" path="../modules/buyer_contacts" %}</div>
-                </div>
+              {% endif%}
+                {% set BUYER_CONTACTS = QUOTE.associated_objects.contacts %}
+                  {% if BUYER_CONTACTS %}
+                    <div class="group expandable">
+                        <p class="label">{{widget_data.for.value}}</p>
+                          {% for recipient in BUYER_CONTACTS %}
+                            {% if loop.first %}
+                              <div class="preview"> {{recipient.firstname}} {{recipient.lastname}}</div>
+                            {% endif%}
+                          {% endfor %}
+                        <div class="output">{% module "buyer_contacts" path="../modules/buyer_contacts" %}</div>
+                    </div>
+                {% endif%}
                 <div class="group">
                     <p class="label">{{widget_data.enddate.value}}</p>
                     <div class="output">{% module "quote_created" path="../modules/quote_expires" %}</div>
