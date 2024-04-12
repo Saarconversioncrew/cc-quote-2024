@@ -20,6 +20,9 @@
     margin-bottom: 7.5rem;
 }
 
+.cc-quote .line-item-description {
+    font-size: 14px;
+}
 .cc-quote .card {
     background: #fff;
     color: #031040;
@@ -327,7 +330,7 @@
     align-items: center;
 }
 .cc-quote .right-header img{
-    margin: 1rem;
+    margin: 0.8rem;
 }
 .cc-quote .right-header button{
     height: fit-content;
