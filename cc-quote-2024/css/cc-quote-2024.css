@@ -361,6 +361,7 @@
     }
  .cc-quote .btn-white.sign {
     margin: 1rem 0;
+    height: auto!important;
 }
 .cc-quote .hs-download__button {
     font-size:14px;
